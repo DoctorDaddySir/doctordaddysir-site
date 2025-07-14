@@ -11,7 +11,63 @@ import "../styles/global.css";
     <link rel="icon" href="/favicon.ico" />
   </head>
   <body class="font-sans">
+    
     <main class="min-h-screen">
+        <!-- Top Bar: Mini-Hero + Menu -->
+  <div
+    id="interface-bar"
+    class="fixed top-0 left-0 z-20 w-full h-[20vh] bg-black flex flex-row items-center"
+  >
+    <!-- Mini Hero Image -->
+<div class="h-full flex items-center justify-start pl-4 pr-8">
+  <img
+    src="/images/dds-hero.png"
+    alt="DoctorDaddySir mini banner"
+    class="h-full object-contain"
+  />
+</div>
+
+
+    <!-- Nav Menu -->
+    <nav class="w-1/2 pr-12 flex justify-end items-center gap-8 text-primary">
+      <!-- Dropdown: Projects -->
+      <div class="relative group">
+        <span class="text-xl cursor-pointer group-hover:text-primary">Projects</span>
+        <div class="absolute hidden group-hover:flex flex-col bg-black mt-2 p-2 rounded shadow-md">
+          <a href="#pentai" class="hover:text-primary py-1 flex items-center gap-2">        
+  <span>Pentai</span>
+  <img src="/images/icon_terminal.png" alt="Terminal icon" class="w-5 h-5" />
+          </a>
+
+          <a href="#plexion" class="hover:text-primary py-1">PleXion<span class="w-5"></span> </a>
+        </div>
+      </div>
+
+      <!-- Dropdown: Writeups -->
+      <div class="relative group">
+        <span class="text-xl cursor-pointer group-hover:text-primary">Writeups</span>
+        <div class="absolute hidden group-hover:flex flex-col bg-black mt-2 p-2 rounded shadow-md">
+<!-- Retired -->
+<a href="#retired" class="hover:text-primary py-1 flex items-center gap-2">
+  <span>Retired</span>
+  <span class="w-5"></span> <!-- Empty for alignment -->
+</a>
+
+<!-- Active (with lock icon) -->
+<a href="#active" class="hover:text-primary py-1 flex items-center gap-2">
+  <span>Active</span>
+  <img src="/images/icon_lock.png" alt="Lock icon" class="w-5 h-5" />
+</a>
+
+
+
+        </div>
+      </div>
+
+      <!-- About Link -->
+      <a href="#about" class="hover:text-primary text-xl">About</a>
+    </nav>
+  </div>
       <slot />
     </main>
   </body>
