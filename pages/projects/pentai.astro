@@ -1,0 +1,31 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout>
+  <section class="pt-[25vh] pb-12 px-6 max-w-4xl mx-auto">
+    <img
+      src="/images/pentai-logo.png"
+      alt="Pentai Logo"
+      class="mx-auto w-80 h-auto mb-6 drop-shadow-lg"
+    />
+    <p class="text-lg mb-4">
+      Pentai is a red-team–first, AI-augmented penetration testing framework designed for serious operators.
+      It's built around a terminal-native, tmux-based workflow that keeps AI in the background — and control in your hands.
+    </p>
+
+    <ul class="list-disc list-inside space-y-3">
+      <li>Operator-driven: AI supports, never overrides</li>
+      <li>Immutable log streams, timestamps, and audit trails</li>
+      <li>Plugin architecture for extensibility</li>
+      <li>Tool integrity checks via binary hashing</li>
+      <li>Smart plugin system, finding manager, and report generation</li>
+    </ul>
+
+    <div class="mt-6">
+      <a href="https://github.com/DoctorDaddySir/Pentai" target="_blank" class="underline hover:text-accent">
+        View on GitHub →
+      </a>
+    </div>
+  </section>
+</Layout>

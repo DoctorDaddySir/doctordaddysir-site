@@ -1,0 +1,35 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout>
+  <section class="pt-[25vh] pb-12 px-6 max-w-4xl mx-auto">
+    <p class="text-lg mb-6">
+      Deep-dive notes and walkthroughs for Hack The Box and other CTF-style challenges.
+    </p>
+
+    <div class="flex flex-col gap-6">
+      <!-- Retired Writeups -->
+      <a
+        href="/writeups/retired"
+        class="block bg-primary text-background p-6 rounded-xl shadow hover:scale-105 hover:shadow-lg transition-all"
+      >
+        <h2 class="text-2xl font-bold mb-2">Retired Machines</h2>
+        <p>
+          Full technical walkthroughs with root flags for machines that have been officially retired.
+        </p>
+      </a>
+
+      <!-- Active Writeups -->
+      <a
+        href="/writeups/active"
+        class="block bg-primary text-background p-6 rounded-xl shadow hover:scale-105 hover:shadow-lg transition-all"
+      >
+        <h2 class="text-2xl font-bold mb-2">Active Machines</h2>
+        <p>
+          Recon notes and observations for current boxes. No spoilers, just operator-first thinking.
+        </p>
+      </a>
+    </div>
+  </section>
+</Layout>
