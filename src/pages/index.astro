@@ -1,42 +1,73 @@
 ---
-import Layout from "../layouts/Layout.astro";
+import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout>
+  <main class="pt-[25vh] pb-12 px-6 flex flex-col items-center">
+    <div class="w-full max-w-3xl overflow-hidden relative">
+      <!-- Slides container -->
+      <div id="carousel-slides" class="flex transition-transform duration-700 ease-in-out">
+        <!-- Slide 1: Pentai -->
+        <div class="min-w-full flex flex-col items-center gap-4 text-center">
+          <h2 class="text-4xl font-bold">Pentai</h2>
+          <p class="text-lg max-w-xl">
+            An operator-first, AI-augmented pentesting framework with plugin support, self-integrity checks, and complete control. 
+          </p>
+          <a href="/projects/pentai" class="mt-4 px-6 py-3 bg-primary text-background rounded-xl shadow hover:scale-105 transition-transform">
+            Learn More
+          </a>
+        </div>
 
+        <!-- Slide 2: PleXion -->
+        <div class="min-w-full flex flex-col items-center gap-4 text-center">
+          <h2 class="text-4xl font-bold">PleXion</h2>
+          <p class="text-lg max-w-xl">
+            A powerful, modular Java backend framework — think Spring with less magic and more precision. Built for extensibility.
+          </p>
+          <a href="/projects/plexion" class="mt-4 px-6 py-3 bg-primary text-background rounded-xl shadow hover:scale-105 transition-transform">
+            Explore Framework
+          </a>
+        </div>
 
-  <!-- Main Content -->
-  <div class="mt-[20vh] px-8 text-primary">
+        <!-- Slide 3: Writeups -->
+        <div class="min-w-full flex flex-col items-center gap-4 text-center">
+          <h2 class="text-4xl font-bold">Writeups</h2>
+          <p class="text-lg max-w-xl">
+            In-depth walkthroughs of Hack The Box and CTF challenges. Learn, analyze, and grow with each exploit.
+          </p>
+          <a href="/writeups" class="mt-4 px-6 py-3 bg-primary text-background rounded-xl shadow hover:scale-105 transition-transform">
+            Browse Writeups
+          </a>
+        </div>
+      </div>
+<!-- Carousel container -->
+<div class="w-full max-w-3xl overflow-hidden relative">
+  <!-- Slides go here -->
+</div>
 
-    <!-- Projects -->
-    <section id="pentai" class="mb-16">
-      <h2 class="text-3xl font-bold mb-2">🧰 Pentai</h2>
-      <p class="text-lg">Modular CLI Red Team framework (AI-augmented, operator-first).</p>
-    </section>
+<!-- Navigation dots (below carousel, not inside) -->
+<div class="mt-6 flex justify-center gap-4 z-0">
+  <button class="w-4 h-4 rounded-full bg-primary opacity-70 hover:opacity-100" data-nav="0"></button>
+  <button class="w-4 h-4 rounded-full bg-primary opacity-70 hover:opacity-100" data-nav="1"></button>
+  <button class="w-4 h-4 rounded-full bg-primary opacity-70 hover:opacity-100" data-nav="2"></button>
+</div>
 
-    <section id="plexion" class="mb-16">
-      <h2 class="text-3xl font-bold mb-2">🧱 PleXion</h2>
-      <p class="text-lg">Spring-like Java application framework built from scratch.</p>
-    </section>
+  </main>
 
-    <!-- Writeups -->
-    <section id="retired" class="mb-16">
-      <h2 class="text-3xl font-bold mb-2">📜 Retired Machines</h2>
-      <p class="text-lg">Writeups for public HTB boxes (access freely available).</p>
-    </section>
+  <script>
+    let current = 0;
+    const total = 3;
+    const slideContainer = document.getElementById('carousel-slides');
 
-    <section id="active" class="mb-16">
-      <h2 class="text-3xl font-bold mb-2">🔒 Active Machines</h2>
-      <p class="text-lg">Writeups protected per HTB rules — login required.</p>
-    </section>
+    function showSlide(index) {
+      current = index;
+      slideContainer.style.transform = `translateX(-${index * 100}%)`;
+    }
 
-    <!-- About -->
-    <section id="about" class="mb-16">
-      <h2 class="text-3xl font-bold mb-2">👤 About</h2>
-      <p class="text-lg">
-        I’m a Java engineer, red team obsessive, and AI builder. Currently building <strong>Pentai</strong> and <strong>PleXion</strong>. HTB Pro Hacker. Always learning, always shipping.
-      </p>
-    </section>
-
-  </div>
+    // Optional auto-advance every 6 seconds
+    setInterval(() => {
+      current = (current + 1) % total;
+      showSlide(current);
+    }, 6000);
+  </script>
 </Layout>
