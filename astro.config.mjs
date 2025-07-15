@@ -3,6 +3,6 @@ import tailwind from '@astrojs/tailwind';
 
 export default defineConfig({
   integrations: [tailwind()],
-  base: '/',
+  base: '/doctordaddysir-site/',
   output: 'static',
 });
