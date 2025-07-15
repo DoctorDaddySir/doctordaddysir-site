@@ -5,5 +5,5 @@ export default defineConfig({
   integrations: [tailwind()],
   base: '/doctordaddysir-site/',
   output: 'static',
-  site: 'https://doctordaddysir.github.io',
+  site: 'https://doctordaddysir.github.io/doctordaddysir-site/',
 });
